@@ -1,11 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<% if @article.photos.any? %>
+  <% @article.photos.each do |photo| %>
+    <%= cl_image_tag(photo.key,
+      width: 400, height: 300, crop: :fill) %>
+  <% end %>
+<% else %>
+  <h4>Please try our new pic upload feature</h4>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
 
-<p>
   <strong>Body:</strong>
   <%= @article.body %>
 </p>
