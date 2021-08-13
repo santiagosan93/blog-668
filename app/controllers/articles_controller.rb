@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
+    # This is awesome - Working as a dev ops
     @articles = Article.all
   end
 
